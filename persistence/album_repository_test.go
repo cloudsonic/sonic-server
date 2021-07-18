@@ -62,23 +62,6 @@ var _ = Describe("AlbumRepository", func() {
 		})
 	})
 
-	Describe("GetStarred", func() {
-		It("returns all starred records", func() {
-			Expect(repo.GetStarred(model.QueryOptions{})).To(Equal(model.Albums{
-				albumRadioactivity,
-			}))
-		})
-	})
-
-	Describe("FindByArtist", func() {
-		It("returns all records from a given ArtistID", func() {
-			Expect(repo.FindByArtist("3")).To(Equal(model.Albums{
-				albumSgtPeppers,
-				albumAbbeyRoad,
-			}))
-		})
-	})
-
 	Describe("getMinYear", func() {
 		It("returns 0 when there's no valid year", func() {
 			Expect(getMinYear("a b c")).To(Equal(0))
